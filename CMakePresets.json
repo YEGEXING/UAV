@@ -1,0 +1,68 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "base",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-multiboard.cmake"
+        },
+        {
+            "name": "h743-debug",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "FIRMWARE_BOARD": "stm32h743"
+            }
+        },
+        {
+            "name": "h743-release",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "FIRMWARE_BOARD": "stm32h743"
+            }
+        },
+        {
+            "name": "f103-debug",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "FIRMWARE_BOARD": "stm32f103"
+            }
+        },
+        {
+            "name": "f103-release",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "FIRMWARE_BOARD": "stm32f103"
+            }
+        },
+        {
+            "name": "x7-debug",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "FIRMWARE_BOARD": "x7"
+            }
+        },
+        {
+            "name": "x7-release",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "FIRMWARE_BOARD": "x7"
+            }
+        }
+    ],
+    "buildPresets": [
+        { "name": "h743-debug", "configurePreset": "h743-debug" },
+        { "name": "h743-release", "configurePreset": "h743-release" },
+        { "name": "f103-debug", "configurePreset": "f103-debug" },
+        { "name": "f103-release", "configurePreset": "f103-release" },
+        { "name": "x7-debug", "configurePreset": "x7-debug" },
+        { "name": "x7-release", "configurePreset": "x7-release" }
+    ]
+}
