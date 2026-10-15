@@ -6,8 +6,6 @@
 - STM32F103：`hw/stm32f103`
 - X7（STM32H743）：`hw/X7`
 
-设计借鉴了 `D:/swordfish` 的分层思想，但没有复制其中的实现代码。两个 HW 包来自原有的 H743、F103 CubeMX 工程。
-
 ## 目录
 
 ```text
